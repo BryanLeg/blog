@@ -7,8 +7,13 @@ function App() {
   return (
     <Router>
       <nav>
-        <Link to="/">Main Page</Link>
-        <Link to="/create-post">Create post</Link>
+        <div className="navlogo">Blog</div>
+        <Link className="navlinks" to="/">
+          Main Page
+        </Link>
+        <Link className="navlinks" to="/create-post">
+          Create post
+        </Link>
       </nav>
       <Routes>
         <Route index element={<MainPage />}></Route>

@@ -56,7 +56,9 @@ const SinglePost = () => {
       ) : (
         <div>
           <h1>Post not found</h1>
-          <button onClick={() => navigate("/")}>Main Page</button>
+          <button className="btn" onClick={() => navigate("/")}>
+            Main Page
+          </button>
         </div>
       )}
     </>

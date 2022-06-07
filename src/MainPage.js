@@ -15,21 +15,27 @@ const MainPage = () => {
     fetchPosts();
   }, []);
   return (
-    <div>
-      {posts.map((post) => {
-        const { id, title, post_text, user_name, likes } = post;
+    <div className="posts">
+      {posts.length > 0 ? (
+        posts.map((post) => {
+          const { id, title, post_text, user_name, likes } = post;
 
-        return (
-          <article key={id}>
-            <div onClick={() => navigate(`/post/${id}`)}>
-              <h1>{title}</h1>
+          return (
+            <article
+              className="single-post"
+              key={id}
+              onClick={() => navigate(`/post/${id}`)}
+            >
+              <h1 className="title">{title}</h1>
               <p>{post_text}</p>
-              <h4>{user_name}</h4>
-              <span>{likes}</span>
-            </div>
-          </article>
-        );
-      })}
+              <h6>Username: {user_name}</h6>
+              <span>Likes: {likes}</span>
+            </article>
+          );
+        })
+      ) : (
+        <div className="loading"></div>
+      )}
     </div>
   );
 };

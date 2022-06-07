@@ -1,5 +1,5 @@
-@import url('https://fonts.googleapis.com/css?family=Karla:400');
-@import url('https://fonts.googleapis.com/css2?family=Spectral&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Karla:400");
+@import url("https://fonts.googleapis.com/css2?family=Spectral&display=swap");
 
 /* ! ========================ROOTING======================= */
 
@@ -48,8 +48,8 @@ html {
   --green-dark: #0f5132;
 
   /* ? FONTS */
-  --headingFont: 'Spectral', serif;
-  --bodyFont: 'Karla', sans-serif;
+  --headingFont: "Spectral", serif;
+  --bodyFont: "Karla", sans-serif;
   --small-text: 0.7em;
 
   /* ? REST OF THE VARIABLES */
@@ -80,19 +80,28 @@ body {
 p {
   margin-bottom: 1rem;
   max-width: 40em;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 5;
+}
+
+p::first-letter,
+.title::first-letter {
+  text-transform: capitalize;
 }
 
 h1,
 h2,
 h3,
 h4,
-h5 {
+h5,
+h6 {
   margin: 0;
   margin-bottom: 1.38rem;
   font-family: var(--headingFont);
   font-weight: 400;
   line-height: 1.3;
-  text-transform: capitalize;
 }
 
 h1 {
@@ -114,6 +123,10 @@ h4 {
 
 h5 {
   font-size: 1.25rem;
+}
+
+h6 {
+  font-size: 1rem;
 }
 
 small,
@@ -274,4 +287,53 @@ ul {
 
 .shadow {
   box-shadow: 13px 13px 0px #666666, -13px -13px 0px #ffffff;
+}
+
+/* navbar */
+
+nav {
+  display: flex;
+  justify-content: end;
+  background-color: #380101;
+  padding: 1rem;
+}
+
+.navlogo {
+  position: absolute;
+  top: 1.4rem;
+  left: 2rem;
+  font-size: large;
+  font-weight: bold;
+  color: var(--primary-200);
+}
+
+.navlinks {
+  color: var(--primary-200);
+  margin: 0.5rem;
+}
+
+.navlinks:hover {
+  color: var(--grey-100);
+}
+
+/* posts mainpage */
+
+.posts {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.single-post {
+  width: calc((100vw - 6rem) / 3);
+  min-height: 33vh;
+  margin: 1rem;
+  padding: 0.5rem;
+  background-color: var(--grey-100);
+  border-radius: 10px;
+}
+
+.single-post:hover {
+  background-color: var(--grey-200);
+  cursor: pointer;
 }
