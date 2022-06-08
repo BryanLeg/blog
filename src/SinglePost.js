@@ -1,5 +1,5 @@
 import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 
 const SinglePost = () => {
@@ -7,12 +7,12 @@ const SinglePost = () => {
   const [posts, setPosts] = useState([]);
   const navigate = useNavigate();
 
-  const fetchPosts = async () => {
+  const fetchPosts = useCallback(async () => {
     const { data } = await axios.get(
       `http://localhost:5000/api/v1/posts/${id}`
     );
     setPosts(data);
-  };
+  }, [id]);
 
   const deletePost = async (id) => {
     await axios.delete(`http://localhost:5000/api/v1/posts/${id}`);
@@ -26,7 +26,7 @@ const SinglePost = () => {
 
   useEffect(() => {
     fetchPosts();
-  }, []);
+  }, [fetchPosts]);
 
   return (
     <>
@@ -37,16 +37,24 @@ const SinglePost = () => {
 
             return (
               <article key={id}>
-                <div>
-                  <h1>{title}</h1>
-                  <p>{post_text}</p>
-                  <h4>{user_name}</h4>
-                  <span>{likes}</span>
+                <div className="singlepost-post">
+                  <h1 className="title">{title}</h1>
+                  <p className="singlepost-text">{post_text}</p>
+                  <h4 className="username">{user_name}</h4>
+                  <span className="likes">
+                    Likes: {likes}
+                    <button
+                      className="btn like-btn"
+                      onClick={() => likePost(id)}
+                    >
+                      Like Post
+                    </button>
+                  </span>
                 </div>
-                <button className="btn" onClick={() => likePost(id)}>
-                  Like Post
-                </button>
-                <button className="btn" onClick={() => deletePost(id)}>
+                <button
+                  className="btn delete-btn"
+                  onClick={() => deletePost(id)}
+                >
                   Delete Post
                 </button>
               </article>
@@ -54,10 +62,10 @@ const SinglePost = () => {
           })}
         </div>
       ) : (
-        <div>
-          <h1>Post not found</h1>
-          <button className="btn" onClick={() => navigate("/")}>
-            Main Page
+        <div className="error">
+          <h1 className="title">Post not found</h1>
+          <button className="btn return-btn" onClick={() => navigate("/")}>
+            Return to Main Page
           </button>
         </div>
       )}

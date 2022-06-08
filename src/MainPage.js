@@ -27,9 +27,9 @@ const MainPage = () => {
               onClick={() => navigate(`/post/${id}`)}
             >
               <h1 className="title">{title}</h1>
-              <p>{post_text}</p>
-              <h6>Username: {user_name}</h6>
-              <span>Likes: {likes}</span>
+              <p className="post-text">{post_text}</p>
+              <h6 className="username">{user_name}</h6>
+              <span className="likes">Likes: {likes}</span>
             </article>
           );
         })

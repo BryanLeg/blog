@@ -59,7 +59,7 @@ html {
   --letter-spacing: 1px;
   --transition: all 0.3s ease-in-out;
   --max-width: 1170px;
-  --fixed-width: 600px;
+  --fixed-width: 1400px;
 
   /* ? BOX SHADOWS */
   --shadow-1: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
@@ -79,11 +79,6 @@ body {
 
 p {
   margin-bottom: 1rem;
-  max-width: 40em;
-  overflow: hidden;
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 5;
 }
 
 p::first-letter,
@@ -228,7 +223,7 @@ ul {
 }
 
 .form-textarea {
-  height: 7rem;
+  height: 24rem;
 }
 
 ::placeholder {
@@ -293,7 +288,7 @@ ul {
 
 nav {
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
   background-color: #380101;
   padding: 1rem;
 }
@@ -336,4 +331,59 @@ nav {
 .single-post:hover {
   background-color: var(--grey-200);
   cursor: pointer;
+}
+
+.post-text {
+  min-height: 10rem;
+  text-indent: 3rem;
+  margin: 1rem;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 5;
+}
+
+.username {
+  display: flex;
+  justify-content: flex-end;
+  color: var(--primary-700);
+}
+
+.likes {
+  color: var(--green-dark);
+  font-style: italic;
+}
+
+/* singlepost page */
+.singlepost-post {
+  margin: 1.5rem;
+}
+
+.singlepost-text {
+  padding: 1rem;
+  text-indent: 3rem;
+}
+
+.like-btn {
+  margin: 0.5rem;
+  font-size: x-small;
+}
+
+.delete-btn {
+  padding: 1rem 2rem;
+  color: var(--primary-500);
+  background-color: var(--primary-900);
+  position: relative;
+  left: 50%;
+  margin: 1rem 0;
+}
+
+.delete-btn:hover {
+  color: var(--primary-100);
+  background-color: var(--primary-200);
+}
+
+.return-btn {
+  position: relative;
+  left: 45%;
 }
