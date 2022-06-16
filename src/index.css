@@ -232,9 +232,13 @@ ul {
 }
 
 .form-alert {
-  color: var(--red-dark);
+  text-align: center;
+  color: var(--black);
   letter-spacing: var(--letter-spacing);
-  text-transform: capitalize;
+}
+
+.form-alert::first-letter {
+  text-transform: uppercase;
 }
 
 /* ? SPINNER */
@@ -347,6 +351,7 @@ nav {
   display: flex;
   justify-content: flex-end;
   color: var(--primary-700);
+  text-transform: capitalize;
 }
 
 .likes {
