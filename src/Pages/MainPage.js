@@ -14,6 +14,7 @@ const MainPage = () => {
   useEffect(() => {
     fetchPosts();
   }, []);
+
   return (
     <div className="posts">
       {posts.length > 0 ? (

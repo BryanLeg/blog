@@ -17,19 +17,23 @@ const Login = () => {
         setErrorCredentials();
       }, 3000);
     } else {
-      const { data } = await axios.post(
-        "http://localhost:5000/api/v1/admins/",
-        {
-          email,
-          password,
-        }
-      );
+      const { data } = await axios.post("http://localhost:5000/api/v1/login/", {
+        email,
+        password,
+      });
 
       if (data.isMatch) {
+        localStorage.setItem("token", data.token);
         setErrorCredentials(data.msg);
-        navigate("/");
+        setTimeout(() => {
+          setErrorCredentials();
+        }, 3000);
+        window.location = "/";
       } else {
         setErrorCredentials(data.msg);
+        setTimeout(() => {
+          setErrorCredentials();
+        }, 3000);
       }
       setEmail("");
       setPassword("");

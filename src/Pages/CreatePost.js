@@ -1,21 +1,23 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import useCheckToken from "../useCheckToken";
 
 const CreatePost = () => {
   const [title, setTitle] = useState("");
   const [text, setText] = useState("");
-  const [userName, setUserName] = useState("");
+
+  const user = useCheckToken();
 
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (userName && title && text) {
+    if (title && text) {
       await axios.post("http://localhost:5000/api/v1/posts", {
         title,
         text,
-        userName,
+        user,
       });
       navigate("/");
     }
@@ -39,13 +41,6 @@ const CreatePost = () => {
         rows="10"
         placeholder="type post here"
       ></textarea>
-      <input
-        className="form-input"
-        type="text"
-        value={userName}
-        onChange={(e) => setUserName(e.target.value)}
-        placeholder="Your name"
-      />
       <button className="btn">Submit</button>
     </form>
   );

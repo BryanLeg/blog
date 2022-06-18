@@ -233,7 +233,7 @@ ul {
 
 .form-alert {
   text-align: center;
-  color: var(--black);
+  color: var(--primary-500);
   letter-spacing: var(--letter-spacing);
 }
 
@@ -360,6 +360,7 @@ nav {
 }
 
 /* singlepost page */
+
 .singlepost-post {
   margin: 1.5rem;
 }
@@ -376,16 +377,16 @@ nav {
 
 .delete-btn {
   padding: 1rem 2rem;
-  color: var(--primary-500);
-  background-color: var(--primary-900);
   position: relative;
   left: 50%;
   margin: 1rem 0;
+  color: var(--primary-100);
+  background-color: var(--primary-200);
 }
 
 .delete-btn:hover {
-  color: var(--primary-100);
-  background-color: var(--primary-200);
+  color: var(--primary-500);
+  background-color: var(--primary-900);
 }
 
 .return-btn {
