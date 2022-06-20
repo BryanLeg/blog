@@ -24,25 +24,36 @@ const CreatePost = () => {
   };
 
   return (
-    <form className="form" onSubmit={handleSubmit}>
-      <input
-        className="form-input"
-        type="text"
-        value={title}
-        onChange={(e) => setTitle(e.target.value)}
-        placeholder="Title"
-      />
-      <br />
-      <textarea
-        className="form-textarea"
-        value={text}
-        onChange={(e) => setText(e.target.value)}
-        cols="30"
-        rows="10"
-        placeholder="type post here"
-      ></textarea>
-      <button className="btn">Submit</button>
-    </form>
+    <>
+      {user ? (
+        <article className="article-createPostForm">
+          <form className="form createPost-form" onSubmit={handleSubmit}>
+            <input
+              className="form-input createPost-input"
+              type="text"
+              value={title}
+              onChange={(e) => setTitle(e.target.value)}
+              placeholder="Title"
+            />
+            <br />
+            <textarea
+              className="form-textarea createPost-textarea"
+              value={text}
+              onChange={(e) => setText(e.target.value)}
+              placeholder="type post here"
+            ></textarea>
+            <button className="btn">Submit</button>
+          </form>
+        </article>
+      ) : (
+        <div className="error">
+          <h1 className="title">You do not have access to this page</h1>
+          <button className="btn return-btn" onClick={() => navigate("/")}>
+            Return to Main Page
+          </button>
+        </div>
+      )}
+    </>
   );
 };
 

@@ -19,7 +19,7 @@ const MainPage = () => {
     <div className="posts">
       {posts.length > 0 ? (
         posts.map((post) => {
-          const { id, title, post_text, user_name, likes } = post;
+          const { id, title, post_text, user_name, date_posted } = post;
 
           return (
             <article
@@ -29,8 +29,10 @@ const MainPage = () => {
             >
               <h1 className="title">{title}</h1>
               <p className="post-text">{post_text}</p>
-              <h6 className="username">{user_name}</h6>
-              <span className="likes">Likes: {likes}</span>
+              <h6 className="username">
+                <span className="published">Publié par</span>
+                {user_name}
+              </h6>
             </article>
           );
         })

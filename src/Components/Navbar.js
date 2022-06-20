@@ -12,9 +12,12 @@ const Navbar = () => {
 
   return (
     <nav>
-      <div className="navlogo">Blog</div>
+      <div className="navlogo">Blog-Perso</div>
       <Link className="navlinks" to="/">
-        Main Page
+        Main page
+      </Link>
+      <Link className="navlinks" to="/about">
+        About me
       </Link>
       {user ? (
         <>

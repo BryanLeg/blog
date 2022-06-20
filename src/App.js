@@ -4,6 +4,7 @@ import SinglePost from "./Pages/SinglePost";
 import CreatePost from "./Pages/CreatePost";
 import Navbar from "./Components/Navbar";
 import Login from "./Pages/Login";
+import About from "./Pages/About";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route path="/create-post" element={<CreatePost />}></Route>
         <Route path="/post/:id" element={<SinglePost />}></Route>
         <Route path="/admin" element={<Login />}></Route>
+        <Route path="/about" element={<About />}></Route>
       </Routes>
     </Router>
   );

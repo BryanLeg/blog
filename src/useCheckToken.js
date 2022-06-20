@@ -11,7 +11,6 @@ const useCheckToken = () => {
       const { data } = await axios.get("http://localhost:5000/api/v1/auth/", {
         headers: { Authorization: `Bearer ${token}` },
       });
-
       setUser(data.userName);
     } else {
     }

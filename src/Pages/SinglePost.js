@@ -60,31 +60,25 @@ const SinglePost = () => {
                   <div className="singlepost-post">
                     <h1 className="title">{title}</h1>
                     <p className="singlepost-text">{post_text}</p>
-                    <h4 className="username">{user_name}</h4>
-                    <span className="likes">
-                      Likes: {likes}
-                      <button
-                        className="btn like-btn"
-                        onClick={() => likePost(id)}
-                      >
-                        Like Post
-                      </button>
-                    </span>
+                    <h6 className="username">
+                      <span className="published">Publié par</span>
+                      {user_name}
+                    </h6>
                   </div>
 
                   {user && (
-                    <div>
-                      <button
-                        className="btn delete-btn"
-                        onClick={() => deletePost(id)}
-                      >
-                        Delete Post
-                      </button>
+                    <div className="buttons">
                       <button
                         className="btn"
                         onClick={() => setIsEditing(true)}
                       >
                         edit post
+                      </button>
+                      <button
+                        className="btn delete-btn"
+                        onClick={() => deletePost(id)}
+                      >
+                        Delete Post
                       </button>
                     </div>
                   )}
