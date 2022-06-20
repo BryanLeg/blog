@@ -25,7 +25,7 @@ const CreatePost = () => {
 
   return (
     <>
-      {user ? (
+      {user === "bryan legrain" ? (
         <article className="article-createPostForm">
           <form className="form createPost-form" onSubmit={handleSubmit}>
             <input

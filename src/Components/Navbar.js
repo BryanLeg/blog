@@ -19,7 +19,7 @@ const Navbar = () => {
       <Link className="navlinks" to="/about">
         About me
       </Link>
-      {user ? (
+      {user === "bryan legrain" ? (
         <>
           <Link className="navlinks" to="/create-post">
             Create post

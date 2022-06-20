@@ -19,8 +19,10 @@ const Login = () => {
         setErrorCredentials();
       }, 3000);
     } else {
+      const lowerEmail = email.toLowerCase();
+
       const { data } = await axios.post("http://localhost:5000/api/v1/login/", {
-        email,
+        email: lowerEmail,
         password,
       });
 

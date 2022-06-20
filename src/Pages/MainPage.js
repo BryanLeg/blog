@@ -29,10 +29,10 @@ const MainPage = () => {
             >
               <h1 className="title">{title}</h1>
               <p className="post-text">{post_text}</p>
-              <h6 className="username">
+              <span className="username">
                 <span className="published">Publié par</span>
                 {user_name}
-              </h6>
+              </span>
             </article>
           );
         })

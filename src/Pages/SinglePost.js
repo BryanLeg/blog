@@ -66,7 +66,7 @@ const SinglePost = () => {
                     </h6>
                   </div>
 
-                  {user && (
+                  {user === "bryan legrain" && (
                     <div className="buttons">
                       <button
                         className="btn"
