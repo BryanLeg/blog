@@ -30,7 +30,7 @@ const MainPage = () => {
               <h1 className="title">{title}</h1>
               <p className="post-text">{post_text}</p>
               <span className="username">
-                <span className="published">Publié par</span>
+                <span className="published">Published by</span>
                 {user_name}
               </span>
             </article>
